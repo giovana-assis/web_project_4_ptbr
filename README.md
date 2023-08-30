@@ -1,16 +1,15 @@
-# Projeto 5:  EUA Afora
+# Projeto 4: De Pátria para Pátria
 
-### Visão geral
+## Descrição do projeto
+Este é projeto foi desenvolvido para quinta etapa do curso de desenvolvimento web da 	:keycap_ten:	:keycap_ten:	:keycap_ten: que simula uma rede social onde o usuário edita o seu nome e uma auto-descrição e adiciona suas fotos conforme sua preferência (nova feature que ainda será incorporada). Para o design responsivo, foi optado principalmente o foco em três tamanhos de tela (1280px, 768px e 576px).
 
-* Figma
-* Imagens
+### Tabela de conteúdos
 
-**Figma**
+O projeto foi estruturado em HTML5, estilizado com folhas de CSS e com funções formuladas em JavaScript.
 
-* [Link para o projeto no Figma](https://www.figma.com/file/XfB6BSINvliub43JgKza1e/WEB.-Sprint-4.-Around-The-U.S.-desktop-%2B-mobile-pt)
+### Planos futuros para o projeto
 
-**Imagens**
+Adicionar funções com JavaScript de modo que o usuário seja capaz de adicionar novas fotos e acionar o botão de coração e uma contagem sobre esse acionamentos.
 
-A maneira como você fará isso no trabalho é exportando imagens diretamente do Figma — recomendamos fazer isso para praticar mais. Não se esqueça de otimizá-los [aqui](https://tinypng.com/), para que seu projeto carregue mais rápido.
-
-Divirta-se com JavaScript!
+### Acesse o site em: 
+gh repo clone giovana-assis/web_project_4_ptbr
