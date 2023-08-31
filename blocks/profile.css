@@ -26,6 +26,8 @@
   text-align: left;
   max-height: 39px;
   margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .edit-button {

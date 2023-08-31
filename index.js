@@ -7,12 +7,12 @@ function addPopup(){
     popup.classList.add('popup-visible');
 }
 
-function removePopup(){
+function closePopup(){
     popup.classList.remove('popup-visible');
 }
 
 openFormButton.addEventListener('click', addPopup);
-closeButton.addEventListener('click', removePopup);  
+closeButton.addEventListener('click', closePopup);  
 
 const profileName = document.querySelector('.profile__name');
 const profileDetail = document.querySelector('.profile__detail');
@@ -22,13 +22,10 @@ const inputDetail = document.querySelector('.popup__detail');
 const saveButton = document.querySelector('.popup__save');
 
 function changeProfile() {
-    if(inputName.value != ''){
           profileName.textContent = inputName.value;
-    }
-    if(inputDetail.value != ''){
-        profileDetail.textContent = inputDetail.value;
-    }
-    removePopup();
+          profileDetail.textContent = inputDetail.value;
+  
+ closePopup();
 }
 saveButton.addEventListener('click', changeProfile);
 

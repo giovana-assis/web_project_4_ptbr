@@ -12,4 +12,4 @@ O projeto foi estruturado em HTML5, estilizado com folhas de CSS e com funções
 Adicionar funções com JavaScript de modo que o usuário seja capaz de adicionar novas fotos e acionar o botão de coração e uma contagem sobre esse acionamentos.
 
 ### Acesse o site em: 
-gh repo clone giovana-assis/web_project_4_ptbr
+https://giovana-assis.github.io/web_project_4_ptbr/
