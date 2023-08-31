@@ -19,13 +19,14 @@ const profileDetail = document.querySelector('.profile__detail');
 
 const inputName = document.querySelector('.popup__name');
 const inputDetail = document.querySelector('.popup__detail');
-const saveButton = document.querySelector('.popup__save');
+const saveButton = document.querySelector('.popup__form');
 
-function changeProfile() {
+function changeProfile(e) {
+    e.preventDefault();
           profileName.textContent = inputName.value;
-          profileDetail.textContent = inputDetail.value;
-  
- closePopup();
+        profileDetail.textContent = inputDetail.value;
+    closePopup();
 }
-saveButton.addEventListener('click', changeProfile);
+saveButton.addEventListener('submit', changeProfile);
+
 
