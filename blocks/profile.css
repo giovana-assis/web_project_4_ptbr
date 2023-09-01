@@ -57,6 +57,10 @@
   margin-top: 16px;
   font-weight: 400;
   font-size: 18px;
+  max-width: 373px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .profile__text {
