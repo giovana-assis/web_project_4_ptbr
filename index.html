@@ -46,6 +46,8 @@
         <img src="/images/add-button.svg" alt="Sinal de adição" class="add" />
       </button>
     </section>
+
+    <ul class="cards cards-container"></ul>
     <section class="popup popup-hidden">
       <div class="popup__wrapper">
         <div class="popup__style">
@@ -77,87 +79,77 @@
         </div>
       </div>
     </section>
+    <template id="template">
+      <li class="card">
+        <button class="card__delete">
+          <img src="./images/Trash.svg" alt="Lata de lixo" class="trash" />
+        </button>
+        <img
+          src="#"
+          alt="#"
+          class="card__image"
+          onclick="openImage()"
+        />
+        <div class="card__info">
+          <h3 class="card__title">#</h3>
+          <button
+            class="card__heart card__heart-inactive card__heart-active"
+          ></button>
+        </div>
+      </li>
+    </template>
+      <section id="popup-photo" class="popup popup-hidden">
+        <div class="popup__wrapper">
+          <div class="popup__style">
+            <button class="popup__close" type="button">
+              <img
+                src="./images/Close-Icon.png"
+                alt="Letra 'X', indicando local de fechamento"
+                class="close"
+              />
+            </button>
+            <img
+          src="#"
+          alt="#"
+          class="popup__image">
+          <h3 class="popup__place">#</h3>
+          </div>
+        </div>
+      </section>
 
-    <section class="cards">
-      <div class="card">
-        <img
-          src="./images/image-yosemite.jpg"
-          alt="Foto de um lago Vale de Yosemite, com diversos tipos de árvores ao fundo e uma montanha"
-          class="card__image"
-        />
-        <div class="card__info">
-          <h3 class="card__title">Vale de Yosemite</h3>
-          <button
-            class="card__heart card__heart-inactive card__heart-active"
-          ></button>
+    <div class="popup-card">
+      <section class="popup popup-hidden">
+        <div class="popup__wrapper">
+          <div class="popup__style">
+            <button class="popup__close" type="button">
+              <img
+                src="./images/Close-Icon.png"
+                alt="Letra 'X', indicando local de fechamento"
+                class="close"
+              />
+            </button>
+            <h3 class="popup__title">Novo local</h3>
+            <form class="popup__form">
+              <input
+                type="text"
+                class="popup__name"
+                placeholder="Título"
+                value=""
+                required
+              />
+              <input
+                type="text"
+                class="popup__detail"
+                placeholder="Link de imagem"
+                value=""
+                required
+              />
+              <button class="popup__save" type="submit">Criar</button>
+            </form>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img
-          src="./images/image-louise.png"
-          alt="Foto do Lago Louise, com águas azuis e montanhas com neve ao fundo"
-          class="card__image"
-        />
-        <div class="card__info">
-          <h3 class="card__title">Lago Louise</h3>
-          <button
-            class="card__heart card__heart-inactive card__heart-active"
-          ></button>
-        </div>
-      </div>
-      <div class="card">
-        <img
-          src="./images/image-mountains.png"
-          alt="Vista superior de montanhas com pôr do sol ao fundo"
-          class="card__image"
-        />
-        <div class="card__info">
-          <h3 class="card__title">Montanhas Carecas</h3>
-          <button
-            class="card__heart card__heart-inactive card__heart-active"
-          ></button>
-        </div>
-      </div>
-      <div class="card">
-        <img
-          src="./images/image-latemar.png"
-          alt="Uma noite estrelada com montanhas ao fundo e neve no chão"
-          class="card__image"
-        />
-        <div class="card__info">
-          <h3 class="card__title">Latemar</h3>
-          <button
-            class="card__heart card__heart-inactive card__heart-active"
-          ></button>
-        </div>
-      </div>
-      <div class="card">
-        <img
-          src="./images/image-vanoise.png"
-          alt="Foto de um lago no Parque Nacional de Vanoise com águas cristalinas"
-          class="card__image"
-        />
-        <div class="card__info">
-          <h3 class="card__title">Vanoise National Park</h3>
-          <button
-            class="card__heart card__heart-inactive card__heart-active"
-          ></button>
-        </div>
-      </div>
-      <div class="card">
-        <img
-          src="./images/image-braies.png"
-          alt="Imagem de um deck no Lago de Braies com barcos atracados, enquanto se estendem montanhas nevadas ao fundo"
-          class="card__image"
-        />
-        <div class="card__info">
-          <h3 class="card__title">Lago di Braies</h3>
-          <button
-            class="card__heart card__heart-inactive card__heart-active"
-          ></button>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
     <footer class="footer">
       <h3 class="footer__copyrights">&#169; 2023. Around the U.S.</h3>
     </footer>

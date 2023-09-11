@@ -27,3 +27,100 @@ function changeProfile(e) {
   closePopup();
 }
 saveButton.addEventListener("submit", changeProfile);
+
+const container = document.querySelector(".cards");
+
+function createCard(card) {
+  const cardTemplate = document.querySelector("#template").content;
+  const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
+  const deleteButton = cardElement.querySelector(".card__delete");
+  const likeButton = cardElement.querySelector(".card__heart");
+  const cardImage = cardElement.querySelector(".card__image")
+
+  cardElement.querySelector(".card__title").textContent = card.name;
+  cardImage.setAttribute("src", card.link);
+  cardImage.setAttribute("alt", card.name);
+  cardImage.addEventListener("click", () => openImage(card));
+  deleteButton.addEventListener("click", () => {
+    deleteButton.parentElement.remove();
+  });
+  likeButton.classList.remove("card__heart-active");
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__heart-active");
+  });
+  return cardElement;
+}
+
+function openImage(card) {
+  const popUpPhoto = document.querySelector("#popup-photo");
+  popUpPhoto.classList.add("popup-visible");
+  popUpPhoto.querySelector(".popup__image").setAttribute("src", card.link);
+  popUpPhoto.querySelector(".popup__place").textContent = card.name;
+  popUpPhoto.querySelector(".popup__close").addEventListener("click", () => popUpPhoto.classList.remove("popup-visible"))
+}
+
+
+const initialCards = [
+  {
+    name: "Vale de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
+  },
+  {
+    name: "Montanhas Carecas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
+  },
+  {
+    name: "Parque Nacional da Vanoise ",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
+  },
+];
+
+for (const cards of initialCards) {
+  const card = createCard(cards);
+  container.append(card);
+}
+
+const addFormButton = document.querySelector(".add-button");
+const popupCard = document.querySelector(".popup-card");
+const popupAdd = popupCard.querySelector(".popup");
+const closeButtonCard = popupCard.querySelector(".popup__close");
+
+function addPopupCard() {
+  popupAdd.classList.add("popup-visible");
+
+}
+
+function closePopupCard() {
+  popupAdd.classList.remove("popup-visible");
+}
+
+addFormButton.addEventListener("click", addPopupCard);
+closeButtonCard.addEventListener("click", closePopupCard);
+const cardForm = popupCard.querySelector(".popup__form");
+
+function addNewCard(event) {
+  event.preventDefault();
+  const inputName = popupCard.querySelector(".popup__name");
+  const inputLink = popupCard.querySelector(".popup__detail");
+
+  const card = createCard({
+    name: inputName.value,
+    link: inputLink.value,
+  });
+  container.prepend(card);
+  closePopupCard();
+}
+
+cardForm.addEventListener("submit", addNewCard);
