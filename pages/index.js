@@ -99,6 +99,7 @@ const closeButtonCard = popupCard.querySelector(".popup__close");
 
 function addPopupCard() {
   popupAdd.classList.add("popup-visible");
+
 }
 
 function closePopupCard() {
