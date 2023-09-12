@@ -5,6 +5,7 @@
   grid-gap: 20px 17px;
   margin-top: 50px;
   list-style: none;
+  padding: 0;
 }
 
 .card {
@@ -92,7 +93,6 @@
 
   .card {
     max-width: 100%;
-    height: auto;
     margin: 0 auto;
   }
 

@@ -17,6 +17,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  max-width: 88%;
   
 }
 
@@ -24,21 +25,22 @@
   visibility: hidden;
     opacity: 0;
     transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-    transition-delay: .5s,0s;
+    transition-delay: .5s, 0s;
 }
 
 .popup-visible {
   visibility: visible;
   opacity: 1;
-}
+  transition: visibility 0s linear 0s, opacity 0.5s;
+  }
 
 .popup__close {
   position: absolute;
   right: -45px;
   top: -35px;
-  background-color: #000;
   border: none;
   cursor: pointer;
+  background: none;
 }
 
 .popup__form {
@@ -46,7 +48,7 @@
   max-width: 430px;
   color: black;
   background-color: white;
-  position: relative;
+  position: absolute;
   margin: 0 auto;
   padding: 36px;
   border-radius: 10px;
@@ -126,10 +128,8 @@
 
 @media screen and (max-width: 576px) {
   .popup__style {
-    max-width: 238px;
     height: auto;
     margin: 123px auto;
-    padding: 25px 22px;
   }
   .popup__title {
     margin-bottom: 76px;
@@ -154,8 +154,8 @@
   }
   .popup__close {
     position: absolute;
-    right: 10px;
-    top: -40px;
+    right: -30px;
+    top: -30px;
     width: 26px;
     height: 26px;
     padding: 0;
