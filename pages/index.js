@@ -33,7 +33,7 @@ function createCard(card) {
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
   const deleteButton = cardElement.querySelector(".card__delete");
   const likeButton = cardElement.querySelector(".card__heart");
-  const cardImage = cardElement.querySelector(".card__image")
+  const cardImage = cardElement.querySelector(".card__image");
 
   cardElement.querySelector(".card__title").textContent = card.name;
   cardImage.setAttribute("src", card.link);
@@ -57,8 +57,8 @@ function openImage(card) {
 }
 
 const closeImage = () => {
-    popUpPhoto.classList.remove("popup-visible");
-}
+  popUpPhoto.classList.remove("popup-visible");
+};
 popUpPhoto.querySelector(".popup__close").addEventListener("click", closeImage);
 
 const initialCards = [
@@ -116,7 +116,6 @@ const inputLink = popupCard.querySelector(".popup__detail");
 function addNewCard(e) {
   e.preventDefault();
 
-
   const card = createCard({
     name: inputPlace.value,
     link: inputLink.value,
@@ -128,24 +127,22 @@ function addNewCard(e) {
 cardForm.addEventListener("submit", addNewCard);
 
 const closePopupEsc = (e) => {
-    if (e.key === "Escape") {
-        closePopup()
-        closePopupCard()
-        closeImage()
-}
-e.target.removeEventListener('keydown', closePopup);
+  if (e.key === "Escape") {
+    closePopup();
+    closePopupCard();
+    closeImage();
+  }
+  e.target.removeEventListener("keydown", closePopup);
 };
-document.addEventListener('keydown', closePopupEsc);
+document.addEventListener("keydown", closePopupEsc);
 
-document.addEventListener('click', (e) => {
-    const popupWrapper = Array.from(document.querySelectorAll(".popup__wrapper"))
-    popupWrapper.forEach((wrapperElement) => {
-if (e.target === wrapperElement) {
-    closePopup()
-    closePopupCard()
-    closeImage()
-}})})
-
-
-
- 
+document.addEventListener("click", (e) => {
+  const popupWrapper = Array.from(document.querySelectorAll(".popup__wrapper"));
+  popupWrapper.forEach((wrapperElement) => {
+    if (e.target === wrapperElement) {
+      closePopup();
+      closePopupCard();
+      closeImage();
+    }
+  });
+});
