@@ -1,16 +1,3 @@
-// function setProfileButtonState (isFormValid) {
-//     if (isFormValid) {
-//         saveButtonProfile.removeAttribute("disabled");
-//         saveButtonProfile.classList.remove("popup__save-disabled");
-//     } else {
-//         saveButtonProfile.setAttribute("disabled", true);
-//         saveButtonProfile.classList.add("popup__save-disabled");
-//     }
-//   }
-
-//  const forms = document.getElementsByTagName("form")
-// const formInput = document.querySelector(".popup__input");
-
   const showInputError = (formElement, inputElement, errorMessage) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add("popup__input_type-error");
@@ -77,6 +64,3 @@ const checkInputValidity = (formElement, inputElement) => {
     errorClass: "popup__error_visible"},
     );
   
-//   formElement.addEventListener("input", function () {
-//     checkInputValidity();
-//   });
