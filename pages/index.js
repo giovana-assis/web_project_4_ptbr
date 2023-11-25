@@ -137,6 +137,15 @@ e.target.removeEventListener('keydown', closePopup);
 };
 document.addEventListener('keydown', closePopupEsc);
 
+document.addEventListener('click', (e) => {
+    const popupWrapper = Array.from(document.querySelectorAll(".popup__wrapper"))
+    popupWrapper.forEach((wrapperElement) => {
+if (e.target === wrapperElement) {
+    closePopup()
+    closePopupCard()
+    closeImage()
+}})})
+
 
 
  
