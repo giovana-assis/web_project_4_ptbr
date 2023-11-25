@@ -51,7 +51,8 @@
     <section class="popup popup-hidden">
       <div class="popup__wrapper">
         <div class="popup__style">
-          <form class="popup__form">
+          <fieldset class="popup__set">
+          <form class="popup__form" name="form_profile" novalidate>
             <button class="popup__close" type="button">
               <img
                 src="./images/Close-Icon.png"
@@ -62,20 +63,30 @@
             <h3 class="popup__title">Editar perfil</h3>
             <input
               type="text"
-              class="popup__name"
+              class="popup__input popup__name"
+              id="name__input"
               placeholder="Nome"
               value=""
+              minlength="2"
+              maxlength="40"
               required
             />
+            <span class="name__input-error"></span>
+
             <input
               type="text"
-              class="popup__detail"
+              class="popup__input popup__detail"
+              id="detail__input"
               placeholder="Descrição"
               value=""
+              minlength="2"
+              maxlength="200"
               required
             />
-            <button class="popup__save" type="submit">Salvar</button>
+            <span class="detail__input-error"></span>
+            <button class="popup__save popup__save_profile popup__save-disabled" type="submit" disabled>Salvar</button>
           </form>
+        </fieldset>
         </div>
       </div>
     </section>
@@ -112,7 +123,8 @@
       <section class="popup popup-hidden">
         <div class="popup__wrapper">
           <div class="popup__style">
-            <form class="popup__form">
+            <fieldset class="popup__set">
+            <form class="popup__form" name="form__card">
               <button class="popup__close" type="button">
                 <img
                   src="./images/Close-Icon.png"
@@ -123,20 +135,28 @@
               <h3 class="popup__title">Novo local</h3>
               <input
                 type="text"
-                class="popup__name"
+                class="popup__input popup__name "
+                id="place__input"
                 placeholder="Título"
                 value=""
+                minlength="2"
+                maxlength="30"
                 required
               />
+              <span class="place__input-error"></span>
+
               <input
                 type="url"
-                class="popup__detail"
+                class="popup__input popup__detail"
+                id="url__input"
                 placeholder="Link de imagem"
                 value=""
                 required
               />
-              <button class="popup__save" type="submit">Criar</button>
+              <span class="url__input-error"></span>
+              <button class="popup__save popup__save_place popup__save-disabled" type="submit" disabled>Criar</button>
             </form>
+          </fieldset>
           </div>
         </div>
       </section>
@@ -146,5 +166,6 @@
     </footer>
 
     <script src="./pages/index.js"></script>
+    <script src="./pages/validate.js"></script>
   </body>
 </html>

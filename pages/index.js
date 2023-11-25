@@ -18,7 +18,11 @@ const profileDetail = document.querySelector(".profile__detail");
 
 const inputName = document.querySelector(".popup__name");
 const inputDetail = document.querySelector(".popup__detail");
-const saveButton = document.querySelector(".popup__form");
+const formProfile = document.forms.form_profile;
+const saveButtonProfile = document.querySelector(".popup__save_profile");
+
+
+
 
 function changeProfile(e) {
   e.preventDefault();
@@ -26,9 +30,7 @@ function changeProfile(e) {
   profileDetail.textContent = inputDetail.value;
   closePopup();
 }
-saveButton.addEventListener("submit", changeProfile);
-
-const container = document.querySelector(".cards");
+formProfile.addEventListener("submit", changeProfile);
 
 function createCard(card) {
   const cardTemplate = document.querySelector("#template").content;
@@ -87,6 +89,7 @@ const initialCards = [
   },
 ];
 
+const container = document.querySelector(".cards");
 for (const cards of initialCards) {
   const card = createCard(cards);
   container.append(card);
@@ -99,7 +102,6 @@ const closeButtonCard = popupCard.querySelector(".popup__close");
 
 function addPopupCard() {
   popupAdd.classList.add("popup-visible");
-
 }
 
 function closePopupCard() {
@@ -108,15 +110,16 @@ function closePopupCard() {
 
 addFormButton.addEventListener("click", addPopupCard);
 closeButtonCard.addEventListener("click", closePopupCard);
-const cardForm = popupCard.querySelector(".popup__form");
+const cardForm = document.forms.form__card;
+const inputPlace = popupCard.querySelector(".popup__name");
+const inputLink = popupCard.querySelector(".popup__detail");
 
-function addNewCard(event) {
-  event.preventDefault();
-  const inputName = popupCard.querySelector(".popup__name");
-  const inputLink = popupCard.querySelector(".popup__detail");
+function addNewCard(e) {
+  e.preventDefault();
+
 
   const card = createCard({
-    name: inputName.value,
+    name: inputPlace.value,
     link: inputLink.value,
   });
   container.prepend(card);
@@ -124,3 +127,10 @@ function addNewCard(event) {
 }
 
 cardForm.addEventListener("submit", addNewCard);
+
+const saveButtonPlace = document.querySelector(".popup__save_place");
+
+
+
+
+ 

@@ -107,6 +107,10 @@
   margin: 48px auto 0;
 }
 
+.popup__save-disabled {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.2);
+}
 .popup__image {
   max-height: 75vh;
   max-width: 75vw;
@@ -123,6 +127,17 @@
   left: 0;
   bottom: -30px;
 }
+
+.popup__input_type-error {
+  border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+
+}
+.popup__input-error_active {
+color: #F00;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;}
 
 @media screen and (max-width: 576px) {
   .popup__style {
